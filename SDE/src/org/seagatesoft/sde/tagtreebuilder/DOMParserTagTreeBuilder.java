@@ -204,7 +204,12 @@ public class DOMParserTagTreeBuilder implements TagTreeBuilder
 					{
 						// dapatkan nilai atribut src-nya
 						NamedNodeMap attributesMap = node.getAttributes();
-						String imgURI = attributesMap.getNamedItem("src").getNodeValue();
+						Node src = attributesMap.getNamedItem("src");
+						String imgURI = "";
+						if (imgURI != null) {
+							imgURI = src.getNodeValue();
+						}
+
 						Matcher absoluteURIMatcher = absoluteURIPattern.matcher( imgURI );
 						
 						// jika URI pada atribut src bukan merupakan URI absolut (URI relatif)
@@ -318,7 +323,12 @@ public class DOMParserTagTreeBuilder implements TagTreeBuilder
 					{
 						// dapatkan nilai atribut src-nya
 						NamedNodeMap attributesMap = node.getAttributes();
-						String imgURI = attributesMap.getNamedItem("src").getNodeValue();
+						Node src = attributesMap.getNamedItem("src");
+						String imgURI = "";
+						if (src != null) {
+							imgURI = src.getNodeValue();
+						}
+
 						Matcher absoluteURIMatcher = absoluteURIPattern.matcher( imgURI );
 						
 						// jika URI pada atribut src bukan merupakan URI absolut (URI relatif)

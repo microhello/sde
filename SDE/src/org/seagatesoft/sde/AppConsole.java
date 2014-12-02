@@ -2,6 +2,7 @@ package org.seagatesoft.sde;
 
 import java.io.IOException;
 import java.io.FileNotFoundException;
+import java.text.MessageFormat;
 import java.util.Formatter;
 import java.util.List;
 import java.util.ArrayList;
@@ -42,11 +43,12 @@ public class AppConsole
 	{
 		// parameter default
 		String input = "";
-		String resultOutput = "MDR.html";
-		double similarityTreshold = 0.80;
+
+		double similarityTreshold = 0.92;
 		boolean ignoreFormattingTags = false;
 		boolean useContentSimilarity = false;
 		int maxNodeInGeneralizedNodes = 9;
+		String resultOutput ="MDR.html";// MessageFormat.format("MDR-{0}-{1}-{2}-{3}-{4}.html",String.valueOf(similarityTreshold*100),ignoreFormattingTags,useContentSimilarity,maxNodeInGeneralizedNodes);
 		
 		// parameter dari pengguna, urutannya URI file input, URI file output, similarity treshold, jumlah node maksimum dalam generalized node
 		// parameter yang wajib adalah parameter URI file input
