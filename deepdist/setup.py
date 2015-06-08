@@ -1,3 +1,4 @@
+//test
 from setuptools import setup
 
 setup(name='deepdist',
